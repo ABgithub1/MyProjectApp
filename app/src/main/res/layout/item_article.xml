@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/source"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10sp"
+                android:textSize="16sp"
+                tools:ignore="RtlSymmetry"
+                tools:text="BBC" />
+
+            <TextView
+                android:id="@id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:maxLength="105"
+                android:paddingStart="10sp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Celtics vs. Warriors score: Jaylen Brown, Jayson Tatum lead Boston to Game 3 win to retake series lead - CBS Sports"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:paddingStart="10sp"
+                tools:text="2022-06-09T04:19:50Z"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="130dp"
+            android:paddingEnd="10sp"
+            android:layout_height="120dp"
+
+            android:elevation="3sp"
+            android:scaleType="centerCrop" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
