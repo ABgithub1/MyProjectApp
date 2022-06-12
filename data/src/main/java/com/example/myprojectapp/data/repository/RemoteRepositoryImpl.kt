@@ -6,11 +6,19 @@ import com.example.myprojectapp.repository.NewsRemoteRepository
 
 class RemoteRepositoryImpl(private val api: NewsAPI) : NewsRemoteRepository {
 
+//    override suspend fun getTopHeadlinesNews(page: Int) = runCatching {
+//        api.getTopHeadlinesNews(page = page)
+//    }.map { article ->
+//        article.map {
+//            it.toDomainModel()
+//        }
+//    }
+
     override suspend fun getTopHeadlinesNews(page: Int) = runCatching {
         api.getTopHeadlinesNews(page = page)
-    }.map { article ->
-        article.map {
-            it.toDomainModel()
+    }.map {
+        it.articles.map { articleDTO ->
+            articleDTO.toDomainModel()
         }
     }
 
@@ -18,9 +26,9 @@ class RemoteRepositoryImpl(private val api: NewsAPI) : NewsRemoteRepository {
 
     override suspend fun getEverythingNews(query: String, page: Int) = runCatching {
         api.getEverythingNews(query = query, page = page)
-    }.map { article ->
-        article.map {
-            it.toDomainModel()
+    }.map {
+        it.articles.map { articleDTO ->
+            articleDTO.toDomainModel()
         }
     }
 }

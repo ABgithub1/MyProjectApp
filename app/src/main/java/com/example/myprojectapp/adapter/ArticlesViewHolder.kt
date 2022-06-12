@@ -13,7 +13,7 @@ class ArticlesViewHolder(
     fun bind(article: Article) {
         binding.date.text = article.publishedAt
         binding.title.text = article.title
-        binding.source.text = article.source.name
+        binding.source.text = article.source?.name
 
         if (article.urlToImage != null) {
             binding.image.load(article.urlToImage)

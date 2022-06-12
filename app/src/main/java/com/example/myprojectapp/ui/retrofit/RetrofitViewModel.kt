@@ -17,7 +17,7 @@ class RetrofitViewModel(
     }
 
     suspend fun getEverythingNews(): Result<List<Article>> {
-        return getEverythingNewsUseCase("a", 1)
+        return getEverythingNewsUseCase("Беларусь", 2)
     }
 
 }

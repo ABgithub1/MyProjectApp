@@ -3,6 +3,7 @@ package com.example.myprojectapp.data.api
 import com.example.myprojectapp.data.constants.Constants.Companion.EVERYTHING_REQUEST
 import com.example.myprojectapp.data.constants.Constants.Companion.TOP_HEADLINES_REQUEST
 import com.example.myprojectapp.data.model.ArticleDTO
+import com.example.myprojectapp.data.model.NewsResponseDTO
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -16,7 +17,7 @@ interface NewsAPI {
         pageSize: Int = MAXIMUM_PAGE_SIZE,  // The number of results to return per page (request). 20 is the default, 100 is the maximum.
         @Query("page")
         page: Int,
-    ): List<ArticleDTO>
+    ): NewsResponseDTO
 
     @GET(EVERYTHING_REQUEST)
     suspend fun getEverythingNews(
@@ -27,10 +28,10 @@ interface NewsAPI {
         page: Int,
         @Query("language")
         language: String = "ru"
-    ): List<ArticleDTO>
+    ): NewsResponseDTO
 
     companion object {
-        const val MAXIMUM_PAGE_SIZE = 30
+        const val MAXIMUM_PAGE_SIZE = 100
     }
 
 }

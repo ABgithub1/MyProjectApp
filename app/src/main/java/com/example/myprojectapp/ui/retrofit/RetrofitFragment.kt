@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myprojectapp.adapter.ArticlesListAdapter
 import com.example.myprojectapp.databinding.FragmentRetrofitBinding
+import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.inject
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.launch
@@ -45,10 +46,13 @@ class RetrofitFragment : Fragment() {
             recyclerView.adapter = adapter
 
             viewLifecycleOwner.lifecycleScope.launch {
-                println("COROUTINE")
-                viewModel.getEverythingNews().fold(
-                    onSuccess = { adapter.submitList(it) },
-                    onFailure = { println("FAILURE") }
+                viewModel.getTopNews().fold(
+                    onSuccess = {
+                        adapter.submitList(it)
+                    },
+                    onFailure = {
+                        Snackbar.make(view, it.message + "Причина: " + it.cause, Snackbar.LENGTH_LONG).show()
+                    }
                 )
             }
 
