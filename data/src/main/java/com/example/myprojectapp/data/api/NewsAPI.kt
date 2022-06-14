@@ -31,7 +31,7 @@ interface NewsAPI {
     ): NewsResponseDTO
 
     companion object {
-        const val MAXIMUM_PAGE_SIZE = 100
+        const val MAXIMUM_PAGE_SIZE = 20
     }
 
 }

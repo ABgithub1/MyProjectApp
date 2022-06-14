@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.myprojectapp.databinding.ItemArticleBinding
-import com.example.myprojectapp.model.ArticlePaging
 import com.example.myprojectapp.model.news.Article
 
 class ArticlesListAdapter(
