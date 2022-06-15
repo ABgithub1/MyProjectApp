@@ -2,21 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_500"
-        app:tabTextColor="@color/white"
-        app:tabIndicatorColor="#0CFFDB"
-        app:tabMaxWidth="0dp"
+        android:layout_height="40dp"
+        android:background="@color/blue"
         app:tabGravity="fill"
-        app:tabMode="fixed">
+        app:tabIndicator="@drawable/tab_indicator_corner_background"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@color/red"
+        app:tabIndicatorHeight="40dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/black">
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -25,3 +28,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
+

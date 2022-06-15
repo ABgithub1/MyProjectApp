@@ -11,9 +11,9 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/navigation_retrofit"
-        android:name="com.example.myprojectapp.ui.retrofit.RetrofitFragment"
-        android:label="fragment_retrofit"
-        tools:layout="@layout/fragment_retrofit" />
+        android:id="@+id/navigation_weather"
+        android:name="com.example.myprojectapp.ui.newFragment.BlankFragment"
+        android:label="Weather"
+        tools:layout="@layout/fragment_blank" />
 
 </navigation>

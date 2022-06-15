@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CAFFF7"
     android:orientation="vertical"
-    tools:context=".ui.retrofit.RetrofitFragment">
+    tools:context=".ui.news.TopNewsFragment">
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
+    <ProgressBar
         android:id="@+id/progress_circular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:indeterminateDrawable="@drawable/custom_circular_progress"
         android:indeterminate="true"
         android:visibility="visible" />
 

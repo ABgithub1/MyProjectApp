@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.myprojectapp.databinding.FragmentHomeBinding
-import com.example.myprojectapp.databinding.FragmentRetrofitBinding
 import com.example.myprojectapp.ui.newFragment.BlankFragment
-import com.example.myprojectapp.ui.retrofit.RetrofitFragment
+import com.example.myprojectapp.ui.news.EverythingNewsFragment
+import com.example.myprojectapp.ui.news.TopNewsFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import java.lang.IndexOutOfBoundsException
 
@@ -33,11 +31,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             viewPager.adapter = TabAdapter(this@HomeFragment)
-
             TabLayoutMediator(tabs, viewPager) { tab, position ->
                 when(position){
-                    0 -> tab.text = "Top News"
-                    1 -> tab.text = "Blank"
+                    0 -> tab.text = "Top news"
+                    1 -> tab.text = "Everything news"
+                    2 -> tab.text = "Saved news"
                 }
             }.attach()
         }
@@ -51,13 +49,14 @@ class HomeFragment : Fragment() {
 
 class TabAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
-        return 2
+        return 3
     }
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> RetrofitFragment() //News Fragment
-            1 -> BlankFragment()
+            0 -> TopNewsFragment()
+            1 -> EverythingNewsFragment()
+            2 -> BlankFragment()
             else -> throw IndexOutOfBoundsException("Wrong position $position")
         }
     }

@@ -12,7 +12,7 @@ interface NewsAPI {
     @GET(TOP_HEADLINES_REQUEST)
     suspend fun getTopHeadlinesNews(
         @Query("country")
-        countryCode: String = "ru",
+        countryCode: String = "us",
         @Query("pageSize")
         pageSize: Int = MAXIMUM_PAGE_SIZE,  // The number of results to return per page (request). 20 is the default, 100 is the maximum.
         @Query("page")
@@ -36,5 +36,5 @@ interface NewsAPI {
 
 }
 
-// GET https://newsapi.org/v2/top-headlines?country=us&apiKey=dbdf332f21b641858d958efd263d3a11
+// https://newsapi.org/v2/top-headlines?country=us&apiKey=dbdf332f21b641858d958efd263d3a11&pageSize=20&page=1
 // API_KEY_1 = dbdf332f21b641858d958efd263d3a11

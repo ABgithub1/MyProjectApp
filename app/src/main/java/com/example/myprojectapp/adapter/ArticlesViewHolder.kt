@@ -2,6 +2,7 @@ package com.example.myprojectapp.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.myprojectapp.constants.Constants.Companion.DEFAULT_NEWS_IMAGE
 import com.example.myprojectapp.databinding.ItemArticleBinding
 import com.example.myprojectapp.model.news.Article
 
@@ -18,7 +19,7 @@ class ArticlesViewHolder(
         if (article.urlToImage != null) {
             binding.image.load(article.urlToImage)
         } else {
-            binding.image.load("https://w7.pngwing.com/pngs/150/410/png-transparent-newspaper-computer-icons-journalist-news-corporation-business-text-people-logo.png")
+            binding.image.load(DEFAULT_NEWS_IMAGE)
         }
 
         binding.root.setOnClickListener {

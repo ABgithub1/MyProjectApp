@@ -7,8 +7,8 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_retrofit"
-        android:icon="@android:drawable/ic_menu_slideshow"
-        android:title="Rertrofit" />
+        android:id="@+id/navigation_weather"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/weather" />
 
 </menu>
