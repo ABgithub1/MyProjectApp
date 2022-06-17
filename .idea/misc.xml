@@ -6,6 +6,7 @@
         <entry key="..\:/MyProjectApp/app/src/main/res/drawable/custom_circular_progress.xml" value="0.262" />
         <entry key="..\:/MyProjectApp/app/src/main/res/drawable/custom_circular_progress_red.xml" value="0.2885" />
         <entry key="..\:/MyProjectApp/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.234" />
+        <entry key="..\:/MyProjectApp/app/src/main/res/drawable/item_selector.xml" value="0.2255" />
         <entry key="..\:/MyProjectApp/app/src/main/res/drawable/tab_corener_background.xml" value="0.228" />
         <entry key="..\:/MyProjectApp/app/src/main/res/drawable/tab_corner_background.xml" value="0.228" />
         <entry key="..\:/MyProjectApp/app/src/main/res/drawable/tab_indicator_corener_background.xml" value="0.228" />
@@ -16,7 +17,9 @@
         <entry key="..\:/MyProjectApp/app/src/main/res/layout/fragment_home.xml" value="0.17" />
         <entry key="..\:/MyProjectApp/app/src/main/res/layout/fragment_notifications.xml" value="0.3625" />
         <entry key="..\:/MyProjectApp/app/src/main/res/layout/fragment_retrofit.xml" value="0.3625" />
+        <entry key="..\:/MyProjectApp/app/src/main/res/layout/fragment_saved_news.xml" value="0.266304347826087" />
         <entry key="..\:/MyProjectApp/app/src/main/res/layout/fragment_top_news.xml" value="0.3625" />
+        <entry key="..\:/MyProjectApp/app/src/main/res/layout/fragment_web_view.xml" value="0.3625" />
         <entry key="..\:/MyProjectApp/app/src/main/res/layout/item_article.xml" value="0.5" />
         <entry key="..\:/MyProjectApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
       </map>

@@ -9,11 +9,24 @@
         android:id="@+id/navigation_home"
         android:name="com.example.myprojectapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_weather"
         android:name="com.example.myprojectapp.ui.newFragment.BlankFragment"
         android:label="Weather"
         tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.myprojectapp.ui.webview.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="urlToArticle"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

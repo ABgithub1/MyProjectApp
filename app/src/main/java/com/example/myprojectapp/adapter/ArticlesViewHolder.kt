@@ -2,7 +2,7 @@ package com.example.myprojectapp.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.myprojectapp.constants.Constants.Companion.DEFAULT_NEWS_IMAGE
+import com.example.myprojectapp.R
 import com.example.myprojectapp.databinding.ItemArticleBinding
 import com.example.myprojectapp.model.news.Article
 
@@ -19,7 +19,7 @@ class ArticlesViewHolder(
         if (article.urlToImage != null) {
             binding.image.load(article.urlToImage)
         } else {
-            binding.image.load(DEFAULT_NEWS_IMAGE)
+            binding.image.load(R.drawable.dafault_news_image)
         }
 
         binding.root.setOnClickListener {

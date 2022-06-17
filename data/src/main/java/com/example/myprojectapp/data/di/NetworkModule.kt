@@ -23,7 +23,7 @@ internal val networkModule = module {
 
     single {
         val httpClient = OkHttpClient.Builder()
-            .addInterceptor(AuthInterceptor(API_KEY_4))
+            .addInterceptor(AuthInterceptor(API_KEY_1))
             .build()
 
         Retrofit.Builder()

@@ -10,14 +10,15 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:background="@color/blue"
         app:tabGravity="fill"
+        app:tabIconTint="@color/white"
         app:tabIndicator="@drawable/tab_indicator_corner_background"
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorColor="@color/red"
-        app:tabIndicatorHeight="40dp"
-        app:tabMode="fixed"
+        app:tabIndicatorHeight="26dp"
+        app:tabMode="auto"
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="@color/black">
 
