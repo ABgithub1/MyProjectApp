@@ -1,5 +1,7 @@
 package com.example.myprojectapp.data.mapper
 
+import androidx.room.Dao
+import androidx.room.PrimaryKey
 import com.example.myprojectapp.data.model.ArticleDTO
 import com.example.myprojectapp.data.model.ArticleEntity
 import com.example.myprojectapp.data.model.SourceDTO
@@ -8,6 +10,7 @@ import com.example.myprojectapp.model.news.Source
 
 fun ArticleDTO.toDomainModel(): Article {
     return Article(
+        id = id,
         author = author,
         content = content,
         description = description,
@@ -21,6 +24,7 @@ fun ArticleDTO.toDomainModel(): Article {
 
 fun ArticleEntity.toDomainModel(): Article {
     return Article(
+        id = id,
         author = author,
         content = content,
         description = description,
@@ -34,7 +38,7 @@ fun ArticleEntity.toDomainModel(): Article {
 
 fun Article.toEntityModel(): ArticleEntity {
     return ArticleEntity(
-        id = 0,
+        id = id,
         author = author,
         content = content,
         description = description,
