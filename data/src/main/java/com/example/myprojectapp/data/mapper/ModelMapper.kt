@@ -1,5 +1,7 @@
 package com.example.myprojectapp.data.mapper
 
+import androidx.room.Dao
+import androidx.room.PrimaryKey
 import com.example.myprojectapp.data.model.ArticleDTO
 import com.example.myprojectapp.data.model.ArticleEntity
 import com.example.myprojectapp.data.model.SourceDTO

@@ -34,9 +34,7 @@ class SavedNewsViewModel(
     }
 
     fun onArticleSwiped(article: Article) = viewModelScope.launch {
-        deleteNewsFromDatabaseUseCase(article).onSuccess {
-
-        }
+        deleteNewsFromDatabaseUseCase(article)
     }
 
 }
