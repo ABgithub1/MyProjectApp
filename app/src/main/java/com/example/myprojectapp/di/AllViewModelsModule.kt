@@ -1,5 +1,6 @@
 package com.example.myprojectapp.di
 
+import com.example.myprojectapp.ui.settings.SettingsViewModel
 import com.example.myprojectapp.ui.home.HomeViewModel
 import com.example.myprojectapp.ui.news.SavedNewsViewModel
 import com.example.myprojectapp.ui.news.TopNewsViewModel
@@ -10,4 +11,5 @@ val allViewModelsModule = module {
     viewModelOf(::HomeViewModel)
     viewModelOf(::TopNewsViewModel)
     viewModelOf(::SavedNewsViewModel)
+    viewModelOf(::SettingsViewModel)
 }
