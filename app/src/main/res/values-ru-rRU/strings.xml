@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyProjectApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="weather">Weather</string>
+    <string name="settings">Settings</string>
+
+    <!--Dark Mode-->
+    <string name="night_mode_title">Тёмная тема</string>
+    <string name="night_mode_button_dark">Ночная</string>
+    <string name="night_mode_button_light">Дневная</string>
+    <string name="night_mode_button_default">Системная</string>
+
+    <!--Language-->
+    <string name="language_title">Язык</string>
+    <string name="language_button_en">Английский</string>
+    <string name="language_button_ru">Русский</string>
+
+</resources>

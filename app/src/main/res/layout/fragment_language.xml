@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="?android:attr/dividerHorizontal"
+        android:padding="20sp"
+        android:showDividers="middle">
+
+        <RadioButton
+            android:id="@+id/button_en"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/language_button_en"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/button_ru"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/language_button_ru"
+            android:textSize="30sp" />
+    </RadioGroup>
+
+</LinearLayout>
