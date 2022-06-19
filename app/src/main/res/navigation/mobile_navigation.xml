@@ -32,6 +32,23 @@
         android:id="@+id/navigation_settings"
         android:name="com.example.myprojectapp.ui.settings.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_navigation_settings_to_nightModeFragment"
+            app:destination="@id/nightModeFragment" />
+        <action
+            android:id="@+id/action_navigation_settings_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nightModeFragment"
+        android:name="com.example.myprojectapp.ui.settings.nightmode.NightModeFragment"
+        android:label="fragment_night_mode"
+        tools:layout="@layout/fragment_night_mode" />
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.myprojectapp.ui.settings.language.LanguageFragment"
+        tools:layout="@layout/fragment_language"
+        android:label="LanguageFragment" />
 
 </navigation>

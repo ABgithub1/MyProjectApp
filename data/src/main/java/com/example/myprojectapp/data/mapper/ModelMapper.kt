@@ -8,6 +8,7 @@ import com.example.myprojectapp.model.news.Source
 
 fun ArticleDTO.toDomainModel(): Article {
     return Article(
+        id = id,
         author = author,
         content = content,
         description = description,
@@ -21,6 +22,7 @@ fun ArticleDTO.toDomainModel(): Article {
 
 fun ArticleEntity.toDomainModel(): Article {
     return Article(
+        id = id,
         author = author,
         content = content,
         description = description,
@@ -34,7 +36,7 @@ fun ArticleEntity.toDomainModel(): Article {
 
 fun Article.toEntityModel(): ArticleEntity {
     return ArticleEntity(
-        id = 0,
+        id = id,
         author = author,
         content = content,
         description = description,

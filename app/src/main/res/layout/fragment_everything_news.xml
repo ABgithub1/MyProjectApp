@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.news.EverythingNewsFragment">
+    android:orientation="vertical"
+    tools:context=".ui.news.TopNewsFragment">
 
-
-    <TextView
+    <ProgressBar
+        android:id="@+id/progress_circular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="TEXT"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
+        android:layout_marginTop="8dp"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/custom_circular_progress"
+        android:visibility="visible" />
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/query_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Query" />
+
+    <!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+    <!--        android:id="@+id/layout_swipe_refresh"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".mvvm.ListFragment"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_article" />
+
+    <!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+</LinearLayout>

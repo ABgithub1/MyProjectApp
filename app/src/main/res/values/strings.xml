@@ -3,8 +3,19 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="weather">Weather</string>
     <string name="settings">Settings</string>
+
+    <!--Dark Mode-->
+    <string name="night_mode_title">Dark theme</string>
+    <string name="night_mode_button_dark">Dark mode</string>
+    <string name="night_mode_button_light">Light mode</string>
+    <string name="night_mode_button_default">System default mode</string>
+
+    <!--Language-->
+    <string name="language_title">Language</string>
+    <string name="language_button_en">English</string>
+    <string name="language_button_ru">Russian</string>
+
 </resources>

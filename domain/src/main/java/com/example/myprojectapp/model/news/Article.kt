@@ -1,6 +1,7 @@
 package com.example.myprojectapp.model.news
 
 data class Article(
+    val id: Long,
     val author: String? = null,
     val content: String? = null,
     val description: String? = null,

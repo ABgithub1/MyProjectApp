@@ -1,6 +1,7 @@
 package com.example.myprojectapp.data.model
 
 data class ArticleDTO(
+    val id: Long,
     val author: String? = null,
     val content: String? = null,
     val description: String? = null,
