@@ -91,7 +91,7 @@ class TopNewsFragment : Fragment() {
     }
 
     companion object {
-        const val ITEMS_TO_LOAD = 10
+        const val ITEMS_TO_LOAD = 5
     }
 
     override fun onDestroyView() {

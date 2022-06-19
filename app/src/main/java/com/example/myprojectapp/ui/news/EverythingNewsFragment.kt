@@ -5,14 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myprojectapp.R
 import com.example.myprojectapp.adapter.ArticlesListAdapter
 import com.example.myprojectapp.databinding.FragmentEverythingNewsBinding
 import com.example.myprojectapp.extentions.addPaginationScrollListener
@@ -63,9 +64,16 @@ class EverythingNewsFragment : Fragment() {
             recyclerView.adapter = adapter
             recyclerView.addSpaceDecoration(8)
 
-            queryInput.addTextChangedListener {
-                viewModel.onQueryTextChanged(it.toString())
-            }
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    viewModel.onQueryTextChanged(newText.toString())
+                    return true
+                }
+            })
 
             recyclerView.addPaginationScrollListener(linearLayoutManager, ITEMS_TO_LOAD) {
                 viewModel.onLoadMore()
@@ -91,11 +99,12 @@ class EverythingNewsFragment : Fragment() {
                         is LceState.Loading -> {}
                     }
                 }.launchIn(viewLifecycleOwner.lifecycleScope)
+
         }
     }
 
     companion object {
-        const val ITEMS_TO_LOAD = 10
+        const val ITEMS_TO_LOAD = 5
     }
 
     override fun onDestroyView() {

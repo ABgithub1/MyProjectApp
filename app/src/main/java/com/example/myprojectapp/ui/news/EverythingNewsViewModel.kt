@@ -15,45 +15,34 @@ class EverythingNewsViewModel(
     private val saveNewsToDatabaseUseCase: SaveNewsToDatabaseUseCase
 ) : ViewModel() {
 
-    private val fetchFlow = MutableSharedFlow<String>(
-        extraBufferCapacity = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST
-    )
-
-    private var searchQuery = ""
-
-    private var currentPage = 1
     private var isLoading = false
+    private var currentPage = 1
 
-    val dataFlow = fetchFlow
-        .filter { !isLoading }
-        .mapLatest {
-            isLoading = true
-            getEverythingNewsUseCase(it, currentPage).fold(
-                onSuccess = {
-                    currentPage++
-                    it
-                },
-                onFailure = {
-                    it.message
-                    emptyList()
-                }
-            )
-        }.onEach {
-            isLoading = false
+    private val loadMoreFlow = MutableSharedFlow<Unit>(
+        replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST
+    )
+    private val queryFlow = MutableStateFlow("")
+
+    val dataFlow = queryFlow
+        .debounce(1000)
+        .onEach {
+            currentPage = 1
+        }.flatMapLatest { query ->
+            newsDataFlow(query)
         }
-        .runningReduce { accumulator, value -> accumulator + value }.map {
-            LceState.Content(it)
-        }
-        .stateIn(viewModelScope, SharingStarted.Eagerly, LceState.Loading)
+        .shareIn(
+            scope = viewModelScope,
+            started = SharingStarted.Eagerly,
+            replay = 1
+        )
+
 
     fun onLoadMore() {
-        fetchFlow.tryEmit(searchQuery)
+        loadMoreFlow.tryEmit(Unit)
     }
 
     fun onQueryTextChanged(query: String) {
-        currentPage = 1
-        searchQuery = query
-        fetchFlow.tryEmit(searchQuery)
+        queryFlow.value = query
     }
 
 
@@ -64,7 +53,29 @@ class EverythingNewsViewModel(
         }
     }
 
+    private fun newsDataFlow(query: String): Flow<LceState<List<Article>>> {
+        return loadMoreFlow
+            .filter { !isLoading }
+            .onEach { isLoading = true }
+            .mapLatest {
+                getEverythingNewsUseCase(query, currentPage).fold(
+                    onSuccess = {
+                        currentPage++
+                        it
+                    },
+                    onFailure = {
+                        it.message
+                        emptyList()
+                    }
+                )
+            }.runningReduce { accumulator, value -> accumulator + value }.map {
+                LceState.Content(it)
+            }
+            .onEach { isLoading = false }
+    }
+
     init {
         onLoadMore()
     }
+
 }
