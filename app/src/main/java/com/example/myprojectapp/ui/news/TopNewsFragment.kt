@@ -1,10 +1,12 @@
 package com.example.myprojectapp.ui.news
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -12,6 +14,7 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myprojectapp.R
 import com.example.myprojectapp.adapter.ArticlesListAdapter
 import com.example.myprojectapp.databinding.FragmentTopNewsBinding
 import com.example.myprojectapp.extentions.addPaginationScrollListener
@@ -21,7 +24,6 @@ import com.example.myprojectapp.ui.home.HomeFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
 class TopNewsFragment : Fragment() {
@@ -40,7 +42,18 @@ class TopNewsFragment : Fragment() {
                 )
             },
             longItemClick = {
-                viewModel.saveArticle(article = it)
+                AlertDialog.Builder(requireContext())
+                    .setTitle("Save ?")
+                    .setIcon(R.drawable.download)
+                    .setMessage("The article will appear in the saved tab")
+                    .setPositiveButton("Yes") { _, _ ->
+                        viewModel.saveArticle(article = it)
+                        Toast.makeText(context, "Saved", Toast.LENGTH_SHORT).show()
+                    }
+                    .setNegativeButton("No") { _, _ ->
+                        Toast.makeText(context, "Canceled", Toast.LENGTH_SHORT).show()
+                    }
+                    .show()
             }
         )
     }

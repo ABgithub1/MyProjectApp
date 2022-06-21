@@ -1,6 +1,6 @@
 package com.example.myprojectapp.data.repository
 
-import com.example.myprojectapp.data.api.NewsAPI
+import com.example.myprojectapp.data.api.news.NewsAPI
 import com.example.myprojectapp.data.mapper.toDomainModel
 import com.example.myprojectapp.repository.NewsRemoteRepository
 

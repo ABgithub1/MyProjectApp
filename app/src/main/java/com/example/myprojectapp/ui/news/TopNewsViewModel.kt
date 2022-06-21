@@ -54,9 +54,7 @@ class TopNewsViewModel(
 
     fun saveArticle(article: Article) {
         viewModelScope.launch {
-            saveNewsToDatabaseUseCase(article).onSuccess {
-                println("Saved")
-            }
+            saveNewsToDatabaseUseCase(article)
         }
     }
 

@@ -1,8 +1,7 @@
-package com.example.myprojectapp.data.api
+package com.example.myprojectapp.data.api.news
 
 import com.example.myprojectapp.data.constants.Constants.Companion.EVERYTHING_REQUEST
 import com.example.myprojectapp.data.constants.Constants.Companion.TOP_HEADLINES_REQUEST
-import com.example.myprojectapp.data.model.ArticleDTO
 import com.example.myprojectapp.data.model.NewsResponseDTO
 import retrofit2.http.GET
 import retrofit2.http.Query

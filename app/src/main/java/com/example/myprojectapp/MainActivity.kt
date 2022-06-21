@@ -2,6 +2,8 @@ package com.example.myprojectapp
 
 import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -46,7 +48,8 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         initNightMode()
-    }
+
+}
 
     private fun initNightMode() {
         AppCompatDelegate.setDefaultNightMode(
@@ -57,5 +60,4 @@ class MainActivity : AppCompatActivity() {
             }
         )
     }
-
 }

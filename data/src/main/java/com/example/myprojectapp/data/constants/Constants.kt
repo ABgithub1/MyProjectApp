@@ -9,9 +9,9 @@ internal class Constants() {
         const val API_KEY_4 = "54bea226d5814aa29342646ca054fa3b"
         const val API_KEY_5 = "a3aebd96c7c94de09b552a2aee1675d4"
         const val API_KEY_6 = "59c8f4fdc65340bfa25fc1a859effef6"
+        const val WEATHER_API_KEY_1 = "6106860a27307e1459f7abf566c3c264"
+        const val BASE_URL_WEATHER = "http://api.weatherstack.com/"
         const val EVERYTHING_REQUEST = "v2/everything"
         const val TOP_HEADLINES_REQUEST = "v2/top-headlines"
-        const val DEFAULT_NEWS_IMAGE = "https://yt3.ggpht.com/ytc/AKedOLRbgen-aYC3c7vPz1Enzj0VPyWQ9qOiGFXLVDfBig=s900-c-k-c0x00ffffff-no-rj"
-
     }
 }

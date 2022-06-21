@@ -1,4 +1,4 @@
-package com.example.myprojectapp.data.api
+package com.example.myprojectapp.data.api.news
 
 import okhttp3.Interceptor
 import okhttp3.Response
